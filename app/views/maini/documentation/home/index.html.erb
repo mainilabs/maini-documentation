@@ -1,0 +1,15 @@
+<h1>Maini Documentation <small><%= @version %></small></h1>
+
+<ul>
+  <% @resources.each do |item| %>
+      <li><%= link_to @grouped_items[item].first.group, endpoint_path(resource: item) %></li>
+      <ul>
+        <% @grouped_items[item].each do |api_item| %>
+          <li>
+             - <%= link_to api_item.title, endpoint_action_path(resource: api_item.resource, act: api_item.action) %>
+          </li>
+        <% end %>
+      </ul>
+  <% end  %>
+</ul>
+

@@ -1,0 +1,6 @@
+<h1 class="page-header"><%= @api_items.first.group %></h1>
+
+<% @api_items.each do |api_item| %>
+  <h2 class="sub-header"><%= api_item.title %></h2>
+  <%= render partial: 'maini/documentation/endpoints/apidoc', locals: { api_item: api_item } %>
+<% end  %>
